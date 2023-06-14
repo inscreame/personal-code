@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
+
+:root {
+    --bg-color: #1c1c1c;
+    --text-color-1: #dad2c6;
+    --text-color-2: #e5bd77;
+    --text-color-3: #e5bd77;
+    --text-color-4: rgb(229, 189, 119, 0.8);
+    --hightlight-color-1: #aa503e;
+}
+
+body.active {
+    --bg-color: #dad2c6;
+    --text-color-1: #1c1c1c;
+    --text-color-2: #aa503e;
+    --text-color-3: #cf9012;
+    --text-color-4: rgb(170, 80, 62, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color-1);
+    font-family: 'Syne', sans-serif;
+    overflow: hidden;
+}
+
+.intro {
+    z-index: 30;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    background: var(--hightlight-color-1);
+}
+
+.first {
+    top: 0;
+}
+
+.second {
+    top: 33.3%
+}
+
+.third {
+    top: 66.6%;
+}
+
+/* cursor  */
+
+.cursor {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid rgb(245, 245, 245);
+    position: fixed;
+    z-index: 10;
+    top: -25px;
+    left: -25px;
+    opacity: 1;
+    overflow: hidden;
+    font-family: brook;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.cursor-two {
+    height: 8px;
+    width: 8px;
+    background: rgb(245, 245, 245);
+    border-radius: 50%;
+    pointer-events: none;
+    position: fixed;
+    z-index: 10;
+    opacity: 1;
+    top: -4px;
+    left: -4px;
+    transition: all .05s ease;
+}
+
+@keyframes mouse {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes mouse {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.nav {
+    width: 100%;
+    height: 100px;
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color-1);
+}
+
+.logo,
+.menu__items-link {
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    color: transparent;
+    transform: scale(1.2);
+}
+
+.menu__items {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__items-link a {
+    font-family: 'Italiana', serif;
+    color: var(--text-color-1);
+    font-size: 21px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.menu__items-link a:hover {
+    color: var(--text-color-3);
+}
+
+.menu__items-link:hover {
+    transform: scale(1.2);
+}
+
+.marquee {
+    width: 1000%;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-top: 1.2em;
+    border-bottom: 1px solid var(--text-color-1);
+}
+
+.marquee span {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    color: var(--hightlight-color-1);
+    font-size: 8em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-left: -10%;
+    animation: marquee-animation 80s linear infinite;
+}
+
+@keyframes marquee-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+
+.col {
+    width: 50%;
+    padding: 1em 3em;
+}
+
+.contact-section h3 {
+    text-transform: uppercase;
+    color: var(--text-color-1);
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.contact-detail p {
+    font-family: 'Italiana', serif;
+    font-size: 40px;
+    line-height: 60px;
+    padding-top: 0.8em;
+    padding-bottom: 0.5em;
+    color: var(--text-color-3);
+}
+
+.item {
+    padding: 2em 0 0 0;
+}
+
+.contact-info {
+    display: flex;
+}
+
+.social {
+    font-size: 24px;
+    display: flex;
+    width: 400px;
+}
+
+.social a {
+    color: var(--text-color-1);
+    padding: 40px;
+    padding-left: 0;
+    bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--text-color-3);
+    transform: scale(1.2);
+}
+
+.address {
+    padding-left: 4em;
+}
+
+.address span {
+    font-family: 'Italiana', serif;
+    color: var(--text-color-1);
+    font-size: 20px;
+}
+
+.email input {
+    font-family: 'Italiana', serif;
+    color: var(--text-color-1);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.email input:hover {
+    color: var(--text-color-3);
+    transform: scale(1.1);
+}
+
+input {
+    color: var(--text-color-1);
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--text-color-1);
+    font-size: 24px;
+    padding: 0.4em;
+    width: 100%;
+    margin-bottom: 0.4em;
+    font-family: 'Italiana', serif;
+}
+
+.row {
+    display: flex;
+    margin: 2em 0 !important;
+}
+
+textarea#message {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--text-color-1);
+    font-size: 24px;
+    padding: 0.4em;
+    color: #fff;
+    font-family: 'Italiana', serif;
+}
+
+.submit {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.submit input {
+    text-decoration: none;
+    color: var(--text-color-1);
+    font-family: 'Syne', sans-serif;
+    font-size: 56px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit input:hover {
+    color: var(--text-color-3);
+    transform: scale(1.1);
+}
+
+.send-icon {
+    font-size: 60px;
+    color: var(--text-color-1);
+}
+
+footer {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: var(--text-color-1);
+    overflow: hidden;
+}
+
+/* dark and light mood  */
+
+.darklight {
+    width: 2500px;
+    display: flex;
+}
+
+.darklight-button {
+    font-family: 'Syne', sans-serif;
+    border: none;
+    padding: 40px;
+    background: none;
+    font-size: 24px;
+    display: inline;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.darklight-button:hover {
+    color: var(--hightlight-color-1);
+    animation-play-state: paused;
+}
+
+.blink {
+    animation: blink 2s linear infinite;
+    color: var(--text-color-1);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media(min-width: 900px) {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .contact-section {
+        width: 100%;
+        display: flex;
+    }
+}
+
+@media(max-width: 900px) {
+    .col {
+        width: 100%;
+    }
+}

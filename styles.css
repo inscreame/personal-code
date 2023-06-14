@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@800&display=swap');
+
+@font-face {
+    font-family: "Nevrada";
+    src: url(../font/AL_Nevrada_Personal_Use_Only.otf);
+}
+
+@font-face {
+    font-family: "brook";
+    src: url('../font/brook.woff2') format('woff2'),
+        url('../font/brook.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --bg-color: #1c1c1c;
+    --text-color-1: #dad2c6;
+    --text-color-2: #e5bd77;
+    --text-color-3: #e5bd77;
+    --text-color-4: rgb(229, 189, 119, 0.8);
+    --hightlight-color-1: #aa503e;
+}
+
+body.active {
+    --bg-color: #dad2c6;
+    --text-color-1: #1c1c1c;
+    --text-color-2: #aa503e;
+    --text-color-3: #cf9012;
+    --text-color-4: rgb(170, 80, 62, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-color);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.home {
+    display: flex;
+}
+
+/* intro effect */
+
+.intro {
+    z-index: 30;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    background: var(--hightlight-color-1);
+}
+
+.first {
+    top: 0;
+}
+
+.second {
+    top: 33.3%
+}
+
+.third {
+    top: 66.6%;
+}
+
+/* cursor  */
+
+.cursor {
+    height: 50px;
+    width: 50px;
+    background: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid var(--text-color-1);
+    position: fixed;
+    z-index: 10;
+    top: -25px;
+    left: -25px;
+    opacity: 1;
+    overflow: hidden;
+    font-family: brook;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+.cursor-two {
+    height: 8px;
+    width: 8px;
+    background: var(--text-color-1);
+    border-radius: 50%;
+    pointer-events: none;
+    position: fixed;
+    z-index: 10;
+    opacity: 1;
+    top: -4px;
+    left: -4px;
+    transition: all .05s ease;
+}
+
+
+/* menu */
+nav {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 15;
+}
+
+.logo,
+.menu__items-link {
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    color: transparent;
+    transform: scale(1.2);
+}
+
+.menu__items {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__items-link a {
+    font-family: 'Italiana', serif;
+    color: var(--text-color-1);
+    font-size: 21px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.menu__items-link a:hover {
+    color: var(--text-color-3);
+}
+
+.menu__items-link:hover {
+    transform: scale(1.2);
+}
+
+/* horizontal scroll items  */
+
+.container {
+    position: relative;
+    display: flex;
+    margin-top: 150px;
+    margin-left: 40px;
+    min-height: 80vh;
+    width: 100%;
+    color: var(--text-color-1);
+}
+
+.container-item-header h1 {
+    position: absolute;
+    display: block;
+    font-weight: bold;
+}
+
+.title {
+    position: absolute;
+    font-size: clamp(40px, 8vw, 110px);
+    letter-spacing: -0.05em;
+    left: 0;
+    top: 0;
+}
+
+.title span {
+    font-family: 'Syne', sans-serif;
+}
+
+.title .span1 {
+    font-size: clamp(20px, 6vw, 80px);
+    font-family: 'Italiana', serif;
+}
+
+/* heart */
+.title .span2 {
+    color: var(--text-color-1);
+    font-size: 95px;
+}
+
+.detail {
+    position: absolute;
+    font-family: 'Italiana', serif;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    left: 760px;
+    top: 240px;
+    display: block;
+    font-size: clamp(14px, 4vw, 24px);
+    font-weight: bold;
+}
+
+.name {
+    font-family: Nevrada;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(30px, 6vw, 80px);
+    color: var(--text-color-3);
+    padding-top: 50px;
+    margin-left: 760px;
+    margin-right: 760px;
+    bottom: 0;
+}
+
+.object {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.container__item:last-of-type {
+    margin-right: 300px;
+}
+
+.container__item-1 {
+    background: url("../images/Art/Goache-Acrylic/acrylic1.JPG") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container__item-2 {
+    background: url("../images/Art/maker/marker1.png") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container__item-3 {
+    background: url("../images/Art//Goache-Acrylic/gouache1.png") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container__item-4 {
+    background: url("../images/Art/Pencil/pencil2.png") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container__item-5 {
+    background: url("../images/Digital/DigitalArt/dart1.png") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.container__item-6 {
+    background: url("../images/Digital/Project/poster7.png") no-repeat 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* footer  */
+
+footer {
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    color: var(--text-color-1);
+    overflow: hidden;
+    z-index: 15;
+}
+
+/* dark and light mood  */
+
+.darklight {
+    width: 2500px;
+    display: flex;
+}
+
+.darklight-button {
+    font-family: 'Syne', sans-serif;
+    border: none;
+    padding: 40px;
+    background: none;
+    font-size: 24px;
+    display: inline;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.darklight-button:hover {
+    color: var(--hightlight-color-1);
+    animation-play-state: paused;
+}
+
+.blink {
+    animation: blink 2s linear infinite;
+    color: var(--text-color-1);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.social {
+    font-size: 24px;
+    display: flex;
+    width: 400px;
+}
+
+.social a {
+    color: var(--text-color-1);
+    padding: 40px;
+    bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social a:hover {
+    color: var(--text-color-3);
+    transform: scale(1.2);
+}
+
+@media(max-width: 900px) {
+    .container__item {
+        width: 300px;
+        height: 200px;
+        margin: 50px 100px 20px 80px;
+    }
+
+    .container__item-header h1 {
+        font-size: 48px !important;
+        left: -50%;
+    }
+
+    .container__item h1 {
+        font-size: 40px;
+        bottom: -20px;
+    }
+
+    .detail {
+        font-size: 12px;
+        left: 50%;
+    }
+}
+
+/* WORKS page styles */
+
+/* SLIDER
+=========================== */
+.swiper-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px 0;
+}
+
+.swiper-wrapper {
+    transition-delay: .5s;
+}
+
+.swiper-slide {
+    width: 800px;
+    height: 500px;
+}
+
+.swiper-slide:nth-child(1) .slide-img {
+    background-image: url('../images/Art/Goache-Acrylic/gouache3.png');
+}
+
+.swiper-slide:nth-child(2) .slide-img {
+    background-image: url('../images/Digital/DigitalArt/dart5.png');
+}
+
+.swiper-slide:nth-child(3) .slide-img {
+    background-image: url('../images/DIY/Custom/custom-1.png');
+}
+
+.swiper-slide:nth-child(4) .slide-img {
+    background-image: url('../images/Photography/2022/pic18.JPEG');
+}
+
+.swiper-slide:nth-child(5) .slide-img {
+    background-image: url('../images/Art/Pencil/pencil1.png');
+}
+
+.slide-img {
+    background-position: 50%;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-img::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgb(234, 205, 43) 0%, rgb(234, 205, 43) 100%);
+    mix-blend-mode: multiply;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 1s ease-in-out;
+}
+
+.slide-img:hover::after {
+    opacity: .2;
+}
+
+.slide-number {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.slide-number p {
+    font-size: 60px;
+    font-family: 'Italiana', serif;
+    color: var(--text-color-3);
+    position: relative;
+}
+
+.slide-number p span {
+    position: absolute;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: -70px;
+    left: 50px;
+    z-index: 1;
+    width: 700px;
+    height: 100px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.slide-text h4 {
+    color: var(--text-color-3);
+    font-size: 60px;
+    font-family: 'Syne', sans-serif;
+    position: relative;
+}
+
+.slide-text:hover {
+    transform: scale(1.1);
+}
+
+.slide-text h4 span {
+    position: absolute;
+}
+
+/* BG TEXT
+=========================== */
+.work-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .3;
+}
+
+.work-bg-text h1 {
+    font-family: "Nevrada";
+    font-size: 190px;
+    text-align: center;
+    color: transparent;
+    opacity: 0.6;
+    -webkit-text-stroke: 3px var(--text-color-2);
+}
+
+
+/* PHOTO
+=========================== */
+
+/* BG TEXT
+=========================== */
+.bg-text {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .2;
+    z-index: -10;
+}
+
+.bg-text h1 {
+    position: relative;
+    font-family: 'Syne', sans-serif;
+    font-size: 115px;
+    text-align: center;
+    color: var(--text-color-4);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.bg-text h1 span {
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.bg-text h1 span:hover {
+    color: var(--text-color-2);
+}
+
+.container-fluid {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    z-index: -5;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 33.3%;
+    padding: 50px 50px;
+}
+
+.column img {
+    position: relative;
+    margin-top: 100px;
+    vertical-align: middle;
+    width: 100%;
+    filter: grayscale(100%) brightness(0.5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.column img:hover {
+    filter: grayscale(0);
+    transform: translateY(-1.75rem);
+}
+
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .column img {
+        filter: grayscale(0) brightness(1);
+    }
+}
